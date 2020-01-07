@@ -8,8 +8,18 @@ This module creates a `security.txt`  file according to https://securitytxt.org/
 
 ### composer
 
+Add to your composer.json
+```
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:kkrieger85/magento-module-security-txt.git"
+    }
+  ],
+```
+
 ``` 
-composer require kkrieger85/magento-module-security-txt
+composer require kkrieger85/magento-module-security-txt:"dev-master"
 ```
 
 ### modman
@@ -24,7 +34,7 @@ modman clone --copy https://github.com/kkrieger85/magento-module-security-txt.gi
 1) enter configuration values
 2) create `security.txt` file from Magento Backend 
 
-If you don't enter any contact information the module uses `contacts/email/recipient_email` setting
+If you don't enter any contact information the module use `contacts/email/recipient_email` setting
 
 
 ## Development
