@@ -1,0 +1,41 @@
+<?php
+/**
+ * @see Kkrieger_SecurityTxt_Block_System_Config_Createfile
+ */
+/**  */
+?>
+<script type="text/javascript">
+    //<![CDATA[
+    function createFile() {
+        var elem = $('<?php echo $this->getHtmlId() ?>');
+
+        params = {
+            //country: $('general_store_information_merchant_country').value,
+            //vat: $('general_store_information_merchant_vat_number').value
+        };
+
+        new Ajax.Request('<?php echo $this->getAjaxUrl() ?>', {
+            //parameters: params,
+            onSuccess: function(response) {
+                result = '<?php echo Mage::helper('core')->jsQuoteEscape($this->__('File not created')) ?>';
+                try {
+                    response = response.responseText;
+                    console.log(response);
+                    if (response == 1) {
+                        result = '<?php echo Mage::helper('core')->jsQuoteEscape($this->__('File created successfully')) ?>';
+                        elem.removeClassName('fail').addClassName('success')
+                    } else {
+                        elem.removeClassName('success').addClassName('fail')
+                    }
+                } catch (e) {
+                    elem.removeClassName('success').addClassName('fail')
+                }
+                $('validation_result').update(result);
+            }
+        });
+    }
+    //]]>
+</script>
+<button onclick="javascript:createFile(); return false;" class="scalable" type="button" id="<?php echo $this->getHtmlId() ?>">
+    <span id="validation_result"><?php echo $this->escapeHtml($this->getButtonLabel()) ?></span>
+</button>

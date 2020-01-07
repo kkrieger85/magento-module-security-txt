@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Kkrieger_SecurityTxt>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Core/>
+
+            </depends>
+        </Kkrieger_SecurityTxt>
+    </modules>
+</config>
