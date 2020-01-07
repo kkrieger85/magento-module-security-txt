@@ -59,14 +59,12 @@ class Kkrieger_SecurityTxt_Model_SecurityTxtFile
 
             $ioFile = new Varien_Io_File();
             $fileName = $ioFile->getCleanPath($filePath . DS . self::FILENAME);
-            Mage::log($fileName);
             $ioFile->open(array('path' => $filePath));
 
             $ioFile->rm($fileName);
 
             $ioFile->cd($filePath);
             if (!$ioFile->fileExists($fileName)) {
-                Mage::log(Zend_Debug::dump($this->entries, null, false));
                 $ioFile->streamOpen($fileName);
                 $ioFile->streamLock(true);
                 foreach ($this->entries as $entry => $value) {

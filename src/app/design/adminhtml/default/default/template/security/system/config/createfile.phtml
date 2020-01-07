@@ -20,7 +20,6 @@
                 result = '<?php echo Mage::helper('core')->jsQuoteEscape($this->__('File not created')) ?>';
                 try {
                     response = response.responseText;
-                    console.log(response);
                     if (response == 1) {
                         result = '<?php echo Mage::helper('core')->jsQuoteEscape($this->__('File created successfully')) ?>';
                         elem.removeClassName('fail').addClassName('success')
