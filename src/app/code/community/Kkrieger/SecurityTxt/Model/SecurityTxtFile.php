@@ -4,6 +4,8 @@
 class Kkrieger_SecurityTxt_Model_SecurityTxtFile
 {
     const XML_CONFIG_PATH_SUFFIX = 'security/txt/';
+    const XML_CONFIG_CONTACT_FALLBACK = 'contacts/email/recipient_email';
+
     const FILENAME = 'security.txt';
 
     private $entries = [
@@ -102,13 +104,18 @@ class Kkrieger_SecurityTxt_Model_SecurityTxtFile
     }
 
     /**
-     * Get config value 
+     * Get config value
      * @param $identifier
      * @return string|null
      */
     private function getConfig($identifier): ?string
     {
-        return Mage::getStoreConfig(self::XML_CONFIG_PATH_SUFFIX . $identifier);
+        if ($identifier == 'contact') {
+            $contact = Mage::getStoreConfig(self::XML_CONFIG_PATH_SUFFIX . $identifier);
+            return empty($contact) ? Mage::getStoreConfig(self::XML_CONFIG_CONTACT_FALLBACK) : $contact;
+        } else {
+            return Mage::getStoreConfig(self::XML_CONFIG_PATH_SUFFIX . $identifier);
+        }
     }
 
 }
