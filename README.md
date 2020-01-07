@@ -24,7 +24,7 @@ modman clone --copy https://github.com/kkrieger85/magento-module-security-txt.gi
 1) enter configuration values
 2) create `security.txt` file from Magento Backend 
 
-If you don't enter any contact information the module uses contacts/email/recipient_email` setting
+If you don't enter any contact information the module uses `contacts/email/recipient_email` setting
 
 
 ## Development
