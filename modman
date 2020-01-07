@@ -1,6 +1,6 @@
 
 src/app/etc/modules/Kkrieger_SecurityTxt.xml                    app/etc/modules/Kkrieger_SecurityTxt.xml
 
-src/app/etc/community/Kkrieger/SecurityTxt/                     app/etc/community/Kkrieger/SecurityTxt
+src/app/code/community/Kkrieger/SecurityTxt/                     app/code/community/Kkrieger/SecurityTxt
 
 src/app/design/adminhtml/default/default/template/security/     app/design/adminhtml/default/default/template/security

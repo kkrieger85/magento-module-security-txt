@@ -16,7 +16,7 @@ composer require kkrieger85/magento-module-security-txt
 
 ```
 modman init
-modman clone https://github.com/kkrieger85/magento-module-security-txt.git
+modman clone --copy https://github.com/kkrieger85/magento-module-security-txt.git
 ```
 
 ## Usage
